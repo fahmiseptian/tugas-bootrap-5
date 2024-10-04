@@ -1,0 +1,123 @@
+/* style.css */
+
+/* Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+:root {
+    --primary-color: #4c9aff; /* Warna biru yang tenang dan redup */
+    --secondary-color: #edf2f7; /* Warna abu-abu sangat terang */
+    --text-color: #333; /* Warna teks yang tidak terlalu gelap */
+    --text-muted-color: #6c757d; /* Warna teks yang lebih redup */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Styling Header */
+.header-image {
+    position: relative;
+    background-image: url('img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Untuk memastikan blur tidak melebihi batas header */
+}
+
+/* Overlay hitam dengan blur */
+.header-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi */
+    filter: blur(8px); /* Blur efek */
+    z-index: 1; /* Letakkan overlay di atas gambar */
+}
+
+/* Konten teks berada di atas overlay */
+.header-image h2,
+.header-image p {
+    position: relative;
+    z-index: 2; /* Pastikan teks berada di atas overlay */
+}
+
+#teks-deskriptif{
+    color: var(--secondary-color);
+}
+
+.header-image h2 {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar Styling */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar-light .navbar-brand {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Section and Gallery Styling */
+h2 {
+    color: var(--primary-color);
+}
+
+p {
+    color: var(--text-muted-color);
+}
+
+.col-md-4:hover .eye-icon {
+    display: block; /* Show the eye icon */
+}
+
+.col-md-4:hover img {
+    opacity: 0.7; /* Add a slight fade effect to the image on hover */
+}
+
+
+.img-fluid {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container .row .col-md-6 img {
+    margin-bottom: 1rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-muted-color);
+}
+
+/* Gallery */
+section .row .col-md-4 img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section .row .col-md-4 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
